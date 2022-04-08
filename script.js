@@ -10,6 +10,8 @@ const initialState = {
 
 let store = Redux.createStore((state = initialState, action) => {
     switch (action.type) {
+        case 'counter/incremented':
+            return { counterValue: state.counterValue + 1, actionType: 'counter/incremented' }
         default:
             return state
     }

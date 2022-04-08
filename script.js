@@ -3,15 +3,20 @@ const actionType = document.getElementById('action-type')
 const btnPlus = document.getElementById('btn-plus')
 const btnMinus = document.getElementById('btn-minus')
 
-const incCounterValue = () => {
-    counterValue.innerText = Number(counterValue.innerText) + 1
-    actionType.innerText = 'incCounterValue()'
+const initialState = {
+    counterValue: 0,
+    actionType: 'None'
 }
 
-const decCounterValue = () => {
-    counterValue.innerText = Number(counterValue.innerText) - 1
-    actionType.innerText = 'decCounterValue()'
-}
+// const incCounterValue = () => {
+//     counterValue.innerText = Number(counterValue.innerText) + 1
+//     actionType.innerText = 'incCounterValue()'
+// }
 
-btnPlus.addEventListener('click', () => {incCounterValue()})
-btnMinus.addEventListener('click', () => {decCounterValue()})
+// const decCounterValue = () => {
+//     counterValue.innerText = Number(counterValue.innerText) - 1
+//     actionType.innerText = 'decCounterValue()'
+// }
+
+// btnPlus.addEventListener('click', () => {incCounterValue()})
+// btnMinus.addEventListener('click', () => {decCounterValue()})

@@ -27,12 +27,12 @@ btnMinus.addEventListener('click', () => {
     store.dispatch({ type: 'counter/decremented' })
 })
 
-const state = store.getState()
-counterValue.innerText = state.counterValue
-actionType.innerText = state.actionType
-
-store.subscribe(() => {
+const handleStateChangeResults = () => {
     const state = store.getState()
     counterValue.innerText = state.counterValue
     actionType.innerText = state.actionType
+}
+
+store.subscribe(() => {
+    handleStateChangeResults()
 })

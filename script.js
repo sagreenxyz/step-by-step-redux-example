@@ -9,7 +9,7 @@ const initialState = {
 }
 
 let store = Redux.createStore((state = initialState, action) => {
-    
+
 })
 
 // const incCounterValue = () => {
@@ -22,5 +22,8 @@ let store = Redux.createStore((state = initialState, action) => {
 //     actionType.innerText = 'decCounterValue()'
 // }
 
-// btnPlus.addEventListener('click', () => {incCounterValue()})
+btnPlus.addEventListener('click', () => {
+    store.dispatch({ type: 'counter/incremented' })
+})
+
 // btnMinus.addEventListener('click', () => {decCounterValue()})

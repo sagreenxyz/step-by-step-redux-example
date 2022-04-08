@@ -9,7 +9,10 @@ const initialState = {
 }
 
 let store = Redux.createStore((state = initialState, action) => {
-
+    switch (action.type) {
+        default:
+            return state
+    }
 })
 
 // const incCounterValue = () => {

@@ -32,3 +32,7 @@ btnPlus.addEventListener('click', () => {
 })
 
 // btnMinus.addEventListener('click', () => {decCounterValue()})
+
+const state = store.getState()
+counterValue.innerText = state.counterValue
+actionType.innerText = state.actionType

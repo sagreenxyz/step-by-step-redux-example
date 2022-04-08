@@ -6,6 +6,7 @@ const btnPlus5 = document.getElementById('btn-plus5')
 const btnMinus5 = document.getElementById('btn-minus5')
 const userValue = document.getElementById('userValue')
 const btnUserValue = document.getElementById('btn-user-value')
+const btnIncIfOdd = document.getElementById('btn-inc-if-odd')
 
 const initialState = {
     counterValue: 0,
@@ -24,6 +25,10 @@ let store = Redux.createStore((state = initialState, action) => {
             return { counterValue: state.counterValue - 5, actionType: 'counter/decremented5' }
         case 'counter/user-value':
             return { counterValue: state.counterValue + action.payload, actionType: 'counter/user-value' }
+        case 'counter/increment-if-odd':
+            if (state.counterValue % 2 !== 0) {
+                return { counterValue: state.counterValue + 1, actionType: 'counter/increment-if-odd' }
+            }
         default:
             return state
     }
@@ -51,6 +56,10 @@ btnUserValue.addEventListener('click', (e) => {
     if (!isNaN(payloadValue)) {
         store.dispatch({ type: 'counter/user-value', payload: Number(userValue.value) })
     }
+})
+
+btnIncIfOdd.addEventListener('click', () => {
+    store.dispatch({ type: 'counter/increment-if-odd' })
 })
 
 const handleStateChangeResults = () => {

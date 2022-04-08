@@ -33,7 +33,9 @@ btnPlus.addEventListener('click', () => {
     store.dispatch({ type: 'counter/incremented' })
 })
 
-// btnMinus.addEventListener('click', () => {decCounterValue()})
+btnMinus.addEventListener('click', () => {
+    store.dispatch({ type: 'counter/decremented' })
+})
 
 const state = store.getState()
 counterValue.innerText = state.counterValue

@@ -7,6 +7,7 @@ const btnMinus5 = document.getElementById('btn-minus5')
 const userValue = document.getElementById('userValue')
 const btnUserValue = document.getElementById('btn-user-value')
 const btnIncIfOdd = document.getElementById('btn-inc-if-odd')
+const btnIncAsync = document.getElementById('btn-inc-async')
 
 const initialState = {
     counterValue: 0,
@@ -29,6 +30,8 @@ let store = Redux.createStore((state = initialState, action) => {
             if (state.counterValue % 2 !== 0) {
                 return { counterValue: state.counterValue + 1, actionType: 'counter/increment-if-odd' }
             }
+        case 'counter/increment-async':
+            return { counterValue: state.counterValue + 1, actionType: 'counter/increment-async' }
         default:
             return state
     }
@@ -60,6 +63,12 @@ btnUserValue.addEventListener('click', (e) => {
 
 btnIncIfOdd.addEventListener('click', () => {
     store.dispatch({ type: 'counter/increment-if-odd' })
+})
+
+btnIncAsync.addEventListener('click', () => {
+    setTimeout(() => {
+        store.dispatch({ type: 'counter/increment-async' })
+    }, 1000)
 })
 
 const handleStateChangeResults = () => {

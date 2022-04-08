@@ -8,6 +8,10 @@ const initialState = {
     actionType: 'None'
 }
 
+let store = Redux.createStore((state = initialState, action) => {
+    
+})
+
 // const incCounterValue = () => {
 //     counterValue.innerText = Number(counterValue.innerText) + 1
 //     actionType.innerText = 'incCounterValue()'

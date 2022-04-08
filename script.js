@@ -36,3 +36,9 @@ btnPlus.addEventListener('click', () => {
 const state = store.getState()
 counterValue.innerText = state.counterValue
 actionType.innerText = state.actionType
+
+store.subscribe(() => {
+    const state = store.getState()
+    counterValue.innerText = state.counterValue
+    actionType.innerText = state.actionType
+})
